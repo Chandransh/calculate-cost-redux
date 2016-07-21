@@ -21,7 +21,7 @@ if (process.env.NODE_ENV !== 'production') {
   ComponentEl = (
     <div>
       <Router history={browserHistory} routes={routes} />
-      <DevTools />
+      {/*<DevTools />*/ /*uncomment this if you want to access redux dev tools*/}
     </div>
   );
 } else {

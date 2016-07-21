@@ -1,3 +1,3 @@
-export const ADD_FRIEND = 'ADD_FRIEND';
-export const STAR_FRIEND = 'STAR_FRIEND';
-export const DELETE_FRIEND = 'DELETE_FRIEND';
+export const ADD_ITEM = 'ADD_ITEM';
+export const DELETE_ITEM = 'DELETE_ITEM';
+export const SEND_USER_TYPE = 'redux-form/CHANGE';

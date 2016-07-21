@@ -3,7 +3,6 @@ import rootReducer from '../reducers';
 import { persistState } from 'redux-devtools';
 
 export default function configureStore(initialState) {
-
   let middleware = applyMiddleware();
   let enhancer;
 

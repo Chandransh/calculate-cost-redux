@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
-import friendList from './friendList';
+import {reducer as formReducer} from 'redux-form';
+import itemList from './itemList';
 
 const rootReducer = combineReducers({
-  friendList
+  form: formReducer,
+  itemList
 });
 
 export default rootReducer;
