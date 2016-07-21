@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import {addItem} from '../../actions/Actions'
-import {Form, AddItem} from '../../components';
+import {Form} from '../../components';
 
 class BillingApp extends Component {
   static propTypes = {
