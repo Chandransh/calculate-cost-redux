@@ -1,10 +1,4 @@
-ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  width: 100%;
-}
-form, .price_box {
+form, section>div {
   display: inline-block;
   width: 46%;
   margin: 0 2% 0;
@@ -15,6 +9,12 @@ form, .price_box {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 100%;
 }
 form div, form label {
   float: left;
@@ -44,22 +44,4 @@ form ul>li:before, form ul>li.added:before {
 form ul>li.added:before {
   content: "\f058";
   color: #00A000;
-}
-
-.price_box ul>li {
-  float: left;
-  clear: both;
-  width: 100%;
-  padding: 5px 10px;
-}
-.price_box ul>li:last-child { /*actual amount*/
-  background: #373A3C;
-  margin-top: 10px;
-  color: #fff;
-}
-.price_box ul>li>span {
-  float: left;
-}
-.price_box ul>li>span:last-child { /*price*/
-  float: right;
 }

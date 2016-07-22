@@ -1,7 +1,8 @@
 import './Form.scss';
 import React, {Component, PropTypes} from 'react'
 import {reduxForm} from 'redux-form'
-import Item from '../Item/Item';
+import Item from '../Item/Item'
+import PriceBox from '../PriceBox/PriceBox'
 export const fields = ['ocupation']
 
 class Form extends Component {
@@ -71,23 +72,7 @@ class Form extends Component {
             </div>
           </div>
         </form>
-        <div className="price_box">
-         <h4>Total Cost</h4>
-         <ul>
-         <li>
-         <span>Item Cost</span>
-         <span>&#8377; {fixDecimalPlaces(itemCost)}</span>
-         </li>
-         <li>
-         <span>Discount</span>
-         <span>&#8377; {fixDecimalPlaces(discount)}</span>
-         </li>
-         <li>
-         <span>Sub Total</span>
-         <span>&#8377; {fixDecimalPlaces(itemCost - discount)}</span>
-         </li>
-         </ul>
-         </div>
+        <PriceBox itemCost={fixDecimalPlaces(itemCost)} discount={fixDecimalPlaces(discount)}/>
       </section>
     )
   }

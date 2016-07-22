@@ -1,0 +1,17 @@
+.price_box ul>li {
+  float: left;
+  clear: both;
+  width: 100%;
+  padding: 5px 10px;
+}
+.price_box ul>li:last-child { /*actual amount*/
+  background: #373A3C;
+  margin-top: 10px;
+  color: #fff;
+}
+.price_box ul>li>span {
+  float: left;
+}
+.price_box ul>li>span:last-child { /*price*/
+  float: right;
+}
