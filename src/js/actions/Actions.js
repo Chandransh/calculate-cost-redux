@@ -3,9 +3,16 @@
  */
 import * as types from '../constants/ActionTypes';
 
-export function addItem(itemId) { /*action creator*/
+/*action creators*/
+export function addItem(itemId) {
   return {
     type: types.ADD_ITEM,
+    itemId
+  };
+}
+export function removeItem(itemId) {
+  return {
+    type: types.REMOVE_ITEM,
     itemId
   };
 }

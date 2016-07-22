@@ -4,21 +4,22 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import {addItem} from '../../actions/Actions'
+import * as Actions from '../../actions/Actions'
 import {Form} from '../../components';
 
 class BillingApp extends Component {
   static propTypes = {
     itemList: PropTypes.object.isRequired,
-    addItem: PropTypes.func.isRequired
+    addItem: PropTypes.func.isRequired,
+    removeItem: PropTypes.func.isRequired
   };
 
   render () {
-    const {itemList, addItem} = this.props;
+    const {itemList, addItem, removeItem} = this.props;
     return (
       <div className="container">
         <h1>Calculate Billing Amount</h1>
-        <Form itemList={itemList} addItem={addItem}/>
+        <Form itemList={itemList} addItem={addItem} removeItem={removeItem}/>
       </div>
     );
   }
@@ -30,12 +31,8 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return {
-    addItem: (itemId) => {
-      dispatch(addItem(itemId))
-    }
-    //bindActionCreators(CalculateActions, dispatch)
-  };
+  return bindActionCreators(Actions, dispatch)
+  ;
 }
 
 export default connect(

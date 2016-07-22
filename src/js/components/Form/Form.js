@@ -9,15 +9,18 @@ class Form extends Component {
     const {
       fields: {ocupation},
       addItem,
+      removeItem,
       itemList
       } = this.props
 
     var listItems = itemList.allItems.map(function(item) {
-      let added = itemList.billedItems.filter(i => i.id == item.id).length > 0;
-      return (<Item key={item.id} onClick={() => {addItem(item.id)}} text={item.name} added={added}/>);
+      var added = itemList.billedItems.filter(i => i.id == item.id).length > 0;
+      return (<Item key={item.id}
+                    onClick={()=> (added) ? removeItem(item.id) : addItem(item.id)}
+                    text={item.name} added={added}/>);
     });
 
-    var billedItems = this.props.itemList.billedItems;
+    var billedItems = itemList.billedItems;
     var itemCost = 0;
     var discount = 0;
 
@@ -69,29 +72,31 @@ class Form extends Component {
           </div>
         </form>
         <div className="price_box">
-          <h4>Total Cost</h4>
-          <ul>
-            <li>
-              <span>Item Cost</span>
-              <span>&#8377; {fixDecimalPlaces(itemCost)}</span>
-            </li>
-            <li>
-              <span>Discount</span>
-              <span>&#8377; {fixDecimalPlaces(discount)}</span>
-            </li>
-            <li>
-              <span>Sub Total</span>
-              <span>&#8377; {fixDecimalPlaces(itemCost - discount)}</span>
-            </li>
-          </ul>
-        </div>
+         <h4>Total Cost</h4>
+         <ul>
+         <li>
+         <span>Item Cost</span>
+         <span>&#8377; {fixDecimalPlaces(itemCost)}</span>
+         </li>
+         <li>
+         <span>Discount</span>
+         <span>&#8377; {fixDecimalPlaces(discount)}</span>
+         </li>
+         <li>
+         <span>Sub Total</span>
+         <span>&#8377; {fixDecimalPlaces(itemCost - discount)}</span>
+         </li>
+         </ul>
+         </div>
       </section>
     )
   }
 }
 
 Form.propTypes = {
-  fields: PropTypes.object.isRequired
+  fields: PropTypes.object.isRequired,
+  addItem: PropTypes.func.isRequired,
+  itemList: PropTypes.object.isRequired
 }
 
 export default reduxForm({

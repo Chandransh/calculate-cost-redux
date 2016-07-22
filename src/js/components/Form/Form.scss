@@ -45,17 +45,7 @@ form ul>li.added:before {
   content: "\f058";
   color: #00A000;
 }
-form button[type="submit"] {
-  background: #00A000;
-  color: #fff;
-  min-height: 40px;
-  border: 0;
-  outline: 0;
-  padding: 10px 25px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-}
+
 .price_box ul>li {
   float: left;
   clear: both;

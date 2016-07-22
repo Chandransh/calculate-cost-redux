@@ -61,10 +61,10 @@ export default function (state = initialState, action) {
         billedItems: [...state.billedItems, addedItem]
       };
     }
-    case types.DELETE_ITEM: {
+    case types.REMOVE_ITEM: {
       return {
         ...state,
-        billedItems: state.billedItems.filter((item) => item.id !== action.id)
+        billedItems: state.billedItems.filter((item) => item.id != action.itemId)
       };
     }
     case types.SEND_USER_TYPE: {
