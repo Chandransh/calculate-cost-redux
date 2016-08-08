@@ -1,5 +1,5 @@
 # calculate-cost-redux
-A simple cost/bill calculate app using Redux (for Athena).
+A simple cost/bill calculate app using Redux.
 
 ##How to run the project using npm:
 
