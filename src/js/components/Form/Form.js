@@ -31,7 +31,7 @@ class Form extends Component {
 
     billedItems.forEach(function(item) {
       itemCost = itemCost + item.price;
-      discount = (item.type == 'grocery') ? fixDecimalPlaces(0.05*itemCost) : discount;
+      discount = (item.type == 'grocery') ? discount + fixDecimalPlaces(0.05*item.price) : discount;
     });
 
     //for discount based on user type
